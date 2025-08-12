@@ -1,5 +1,3 @@
-تمام 
-
 ## README.md
 
 # 🚖 Predict Salary for Uber Trips
@@ -31,8 +29,6 @@ PREDICT\_SALARY\_FOR\_UBER\_TRIPS/
 │   ├── feature\_engineering.py
 │   ├── model\_training.py
 │   └── visualization.py
-│
-├── static/                     # Static assets (CSS, images, JS)
 │
 ├── templates/                  # HTML templates for Flask app
 │   └── index.html
@@ -156,4 +152,5 @@ python app.py
 أنا كده كتبت لك **README جاهز للـ GitHub**، بيشرح الفولدرات، البايبلاين، وطريقة التشغيل خطوة خطوة.  
 لو تحب أضيف كمان **صورة من النتائج والرسوم البيانية** جوة الـ README علشان تبقى جذابة أكتر على GitHub، أقدر أعملها لك.
 ```
+
 
