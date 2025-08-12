@@ -1,89 +1,162 @@
+تمام 👍
+أنا هكتب لك **README.md** احترافي يشرح المشروع خطوة بخطوة، مع شرح الفولدرات والملفات وأسلوب التشغيل.
+
+---
+
+## README.md
+
+```markdown
 # 🚖 Predict Salary for Uber Trips
 
-This is an **End-to-End Machine Learning Project** that predicts the salary (fare amount) for Uber trips based on various trip details such as location, distance, weather, and traffic conditions.  
-The project is deployed locally using **FastAPI**.
+This project predicts the **fare amount (salary)** for Uber trips based on trip and environmental features, using **machine learning models**.
 
 ---
 
 ## 📂 Project Structure
 ```
 
-├── app.py                  # FastAPI main application
-├── model.pkl               # Trained ML model
-├── templates/              # HTML templates for UI
-├── static/                 # CSS/JS files
-├── data/                   # Dataset (ignored in .gitignore)
-└── README.md               # Project documentation
+PREDICT\_SALARY\_FOR\_UBER\_TRIPS/
+│
+├── data/                       # Dataset(s)
+│   └── Uber\_booking\_status.csv
+│
+├── models/                     # Saved models (Pickle/Joblib files)
+│
+├── notebooks/                  # Jupyter notebooks for EDA & experiments
+│   ├── uber-trip-eda.ipynb
+│   └── predict-salary-for-uber-trip-...
+│
+├── scripts/                    # Standalone Python scripts
+│   └── train.py
+│
+├── src/                        # Source code modules
+│   ├── data\_preprocessing.py
+│   ├── evaluation.py
+│   ├── feature\_engineering.py
+│   ├── model\_training.py
+│   └── visualization.py
+│
+├── static/                     # Static assets (CSS, images, JS)
+│
+├── templates/                  # HTML templates for Flask app
+│   └── index.html
+│
+├── app.py                      # Flask web application entry point
+├── requirements.txt            # Python dependencies
+└── README.md                   # Project documentation
 
 ````
 
 ---
 
-## 📊 Dataset
-The raw dataset contains:
-- **User & Driver info**
-- **Car Condition, Weather, Traffic Condition**
-- **Pickup & Dropoff coordinates**
-- **Date & Time features**
-- **Distances from key NYC landmarks**
-- **Trip distance and bearing**
+## 🧠 Machine Learning Pipeline
+
+### 1️⃣ **Data Loading & Exploration**
+- Loads `Uber_booking_status.csv` into a pandas DataFrame.
+- Displays **info, statistics, null values, duplicates, unique values**.
+
+### 2️⃣ **Data Cleaning**
+- Drops irrelevant columns (`User ID`, `User Name`, `Driver Name`, `key`).
+- Removes negative fare values.
+- Handles missing values by dropping rows with `NaN`.
+
+### 3️⃣ **Feature Engineering**
+- Extracts **hour, day, month, weekday, weekend** from pickup datetime.
+- Creates **rush hour** feature.
+- Encodes categorical features (`Car Condition`, `Weather`, `Traffic Condition`) using `LabelEncoder`.
+- Adds trigonometric transformation for `bearing` (`sin`, `cos`).
+- Removes unused location columns (latitude/longitude).
+
+### 4️⃣ **Outlier Detection**
+- Uses `IsolationForest` to remove anomalies in numerical columns.
+
+### 5️⃣ **Scaling**
+- Scales features using `RobustScaler`.
+
+### 6️⃣ **Model Training**
+- Trains two models:
+  - **RandomForestRegressor**
+  - **ExtraTreesRegressor**
+- Splits data into **train (80%) / test (20%)**.
+
+### 7️⃣ **Model Evaluation**
+- Metrics:
+  - **RMSE**
+  - **R² Score**
+- Compares feature importances for both models.
+- Creates **visualizations** for feature importance, actual vs predicted, and residual plots.
+
+### 8️⃣ **Model Saving**
+- Saves the trained Random Forest model as:
+  ```bash
+  random_forest_model.pkl
+````
 
 ---
 
-## ⚙️ Features
-- **Data Preprocessing** (handling missing values, feature engineering)
-- **Model Training** using Machine Learning algorithms
-- **Local Deployment** with FastAPI
-- **Interactive UI** to upload CSV and get predictions
+## 📊 Visualizations
+
+* **Feature Importance** comparison between Random Forest & Extra Trees.
+* **Actual vs Predicted** scatter plot.
+* **Residual plot** for model performance.
 
 ---
 
-## 🚀 How to Run Locally
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/End-To-End-ML-Predict-Salary-For-Uber-Trips.git
-   cd End-To-End-ML-Predict-Salary-For-Uber-Trips
-    ````
+## 🚀 How to Run
 
-2. **Install dependencies**:
+### 1️⃣ Clone the Repository
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/hassan-obaya/End-To-End-ML-Predict-Salary-For-Uber-Trips.git
+cd End-To-End-ML-Predict-Salary-For-Uber-Trips
+```
 
-3. **Run the app**:
+### 2️⃣ Create a Virtual Environment
 
-   ```bash
-   uvicorn app:app --reload
-   ```
+```bash
+python -m venv venv
+source venv/bin/activate   # On Mac/Linux
+venv\Scripts\activate      # On Windows
+```
 
-4. **Open in browser**:
+### 3️⃣ Install Dependencies
 
-   ```
-   http://127.0.0.1:8000
-   ```
+```bash
+pip install -r requirements.txt
+```
 
----
+### 4️⃣ Run the Training Script
 
-## 🛠 Technologies Used
+```bash
+python scripts/train.py
+```
 
-* **Python**
-* **Pandas, NumPy, Scikit-learn**
-* **FastAPI**
-* **HTML, CSS (Jinja2 templates)**
+### 5️⃣ Launch the Web App
+
+```bash
+python app.py
+```
+
+* The app will be available at: `http://127.0.0.1:5000`
 
 ---
 
 ## 📌 Notes
 
-* The dataset is **not included** in the repo (ignored via `.gitignore`).
-* Replace `model.pkl` if retraining the model with new data.
+* Make sure the dataset `Uber_booking_status.csv` exists in the `data/` folder.
+* Large model files (`.pkl`) should not be pushed to GitHub — use `.gitignore`.
 
 ---
 
-## 👨‍💻 Author
+## 👤 Author
 
 **Hassan Obaya**
-[GitHub Profile](https://github.com/hassan-obaya)
+📧 Contact: *hassanobaya@gmail.com*
 
+```
 
+---
+
+أنا كده كتبت لك **README جاهز للـ GitHub**، بيشرح الفولدرات، البايبلاين، وطريقة التشغيل خطوة خطوة.  
+لو تحب أضيف كمان **صورة من النتائج والرسوم البيانية** جوة الـ README علشان تبقى جذابة أكتر على GitHub، أقدر أعملها لك.
+```
