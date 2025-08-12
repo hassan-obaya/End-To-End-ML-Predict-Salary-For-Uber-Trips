@@ -128,8 +128,13 @@ python scripts/train.py
 ```bash
 python app.py
 ```
+▶️ Running the App
 
-* The app will be available at: `http://127.0.0.1:5000`
+```bash
+uvicorn app:app --reload
+```
+
+* The app will be available at: `http://127.0.0.1:8000`
 
 ---
 
@@ -144,6 +149,7 @@ python app.py
 
 **Hassan Obaya**
 📧 Contact: *hassanobaya@gmail.com*
+
 
 
 
