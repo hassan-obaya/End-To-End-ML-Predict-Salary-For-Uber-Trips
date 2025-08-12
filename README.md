@@ -39,6 +39,9 @@ PREDICT\_SALARY\_FOR\_UBER\_TRIPS/
 
 ````
 
+<img width="1467" height="873" alt="image" src="https://github.com/user-attachments/assets/5425a7e6-04eb-47b6-8bd9-f167e3e89698" />
+
+
 ---
 
 ## 🧠 Machine Learning Pipeline
@@ -149,6 +152,7 @@ uvicorn app:app --reload
 
 **Hassan Obaya**
 📧 Contact: *hassanobaya@gmail.com*
+
 
 
 
