@@ -27,12 +27,11 @@ yaml
 Copy
 Edit
 
----
 
 ## ⚙️ Installation
 
 1. **Clone the repository**
-```bash
+bash
 git clone https://github.com/hassan-obaya/End-To-End-ML-Predict-Salary-For-Uber-Trips.git
 cd End-To-End-ML-Predict-Salary-For-Uber-Trips
 Create a virtual environment
@@ -83,3 +82,4 @@ Pandas
 HTML/CSS (Jinja2 templates)
 
 Uvicorn
+
