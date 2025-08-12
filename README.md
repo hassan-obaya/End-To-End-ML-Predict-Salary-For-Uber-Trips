@@ -1,11 +1,7 @@
-تمام 👍
-أنا هكتب لك **README.md** احترافي يشرح المشروع خطوة بخطوة، مع شرح الفولدرات والملفات وأسلوب التشغيل.
-
----
+تمام 
 
 ## README.md
 
-```markdown
 # 🚖 Predict Salary for Uber Trips
 
 This project predicts the **fare amount (salary)** for Uber trips based on trip and environmental features, using **machine learning models**.
@@ -90,7 +86,7 @@ PREDICT\_SALARY\_FOR\_UBER\_TRIPS/
 - Saves the trained Random Forest model as:
   ```bash
   random_forest_model.pkl
-````
+  ````
 
 ---
 
@@ -160,3 +156,4 @@ python app.py
 أنا كده كتبت لك **README جاهز للـ GitHub**، بيشرح الفولدرات، البايبلاين، وطريقة التشغيل خطوة خطوة.  
 لو تحب أضيف كمان **صورة من النتائج والرسوم البيانية** جوة الـ README علشان تبقى جذابة أكتر على GitHub، أقدر أعملها لك.
 ```
+
